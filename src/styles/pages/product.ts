@@ -6,6 +6,7 @@ export const ProductContainer = styled('main', {
   alignItems: 'stretch',
   gap: '4rem',
 
+  width: '100%',
   maxWidth: 1180,
   margin: '0 auto',
 })
@@ -65,4 +66,37 @@ export const ProductDetails = styled('div', {
       background: '$green300',
     }
   },
+})
+
+export const ImageContainerSkeleton = styled('div', {
+  backgroundColor: '$gray800',
+  width: '100%',
+  height: 480,
+  borderRadius: 8,
+
+})
+
+export const ProductDetailsSkeleton = styled('div', {
+  'div:nth-child(1)': {
+    backgroundColor: '$gray800',
+    width: '50%',
+    height: 50,
+    borderRadius: 8,
+  },
+  
+  'div:nth-child(2)': {
+    backgroundColor: '$gray800',
+    width: '30%',
+    height: 50,
+    borderRadius: 8,
+    marginTop: 16,
+    marginBottom: 32,
+  },
+
+  'div:nth-child(3)': {
+    backgroundColor: '$gray800',
+    width: '100%',
+    height: 100,
+    borderRadius: 8,
+  }
 })
