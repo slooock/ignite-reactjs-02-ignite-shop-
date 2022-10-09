@@ -24,7 +24,7 @@ export const SuccessContainer = styled('main', {
 
   a: {
     display: 'block',
-    marginTop: '4rem',
+    marginTop: '5rem',
     fontSize: '$lg',
     color: '$green500',
     textDecoration: 'none',
