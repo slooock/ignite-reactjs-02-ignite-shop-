@@ -5,6 +5,7 @@ export const HomeContainer = styled('main', {
   width: '100%',
   maxWidth: 'calc(100vw - ((100vw - 1180px) / 2))',
   marginLeft: 'auto',
+  position: 'relative',
 })
 
 export const Product = styled('div', {
@@ -60,4 +61,58 @@ export const Product = styled('div', {
       opacity: 1,
     }
   }
+})
+
+export const ArrowLeft = styled('button', {
+  cursor: 'pointer',
+  paddingLeft: '1rem',
+  paddingRight: '4.5rem',
+  
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  bottom: 0,
+  zIndex: 10,
+  
+  border: 0,
+  background: 'linear-gradient(-90deg, rgba(18, 18, 20, 0) 0%, rgba(18, 18, 20, 0.75) 100%)',
+
+  '@bp': {
+    paddingRight: '1rem',
+  },
+
+  '&:hover': {
+    svg: {
+      path: {
+         fill: '$white',
+      },
+    },
+  },
+})
+
+export const ArrowRight = styled('button', {
+  cursor: 'pointer',
+  paddingRight: '1rem',
+  paddingLeft: '4.5rem',
+  
+  position: 'absolute',
+  top: 0,
+  right: 0,
+  bottom: 0,
+  zIndex: 10,
+
+  border: 0,
+  background: 'linear-gradient(90deg, rgba(18, 18, 20, 0) 0%, rgba(18, 18, 20, 0.75) 100%)',
+  
+  '@bp': {
+    paddingLeft: '1rem',
+  },
+
+  '&:hover': {
+    svg: {
+      path: {
+        fill: '$white',
+      },
+    },
+  },
 })

@@ -29,5 +29,9 @@ export const {
       xl: '1.5rem',
       '2xl': '2rem',
     },
-  }
+  },
+  
+  media: {
+    bp: '(max-width: 768px)',
+  },
 })
