@@ -30,29 +30,45 @@ export const Product = styled('div', {
     left: '0.25rem',
     right: '0.25rem',
     padding: '2rem',
-
-    borderRadius: 6,
-
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-
+    
+    borderRadius: 6,
     background: 'rgba(0, 0, 0, 0.6)',
     
     transform: 'translateY(110%)',
     opacity: 0,
     transition: 'all 0.2s ease-in-out',
+  
+    '.title': {
+      display: 'flex',
+      gap: '.5rem',
+      flexDirection: 'column',
 
-    strong: {
-      fontSize: '$lg',
-      color: '$gray100',
+      strong: {
+        fontSize: '$lg',
+        color: '$gray100',
+      },
+      
+      span: {
+        fontSize: '$xl',
+        fontWeight: 'bold',
+        color: '$green300',
+      },
     },
+    
+    '.icon': {
+      width: '3.5rem',
+      height: '3.5rem',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
 
-    span: {
-      fontSize: '$xl',
-      fontWeight: 'bold',
-      color: '$green300',
-    },  
+      borderRadius: 6,
+      background: '$green500',
+      color: '$white',
+    },
   },
 
   '&:hover': {

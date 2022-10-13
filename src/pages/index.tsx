@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -5,6 +6,7 @@ import Image from 'next/future/image';
 import Stripe from 'stripe';
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
+import { Handbag } from 'phosphor-react';
 
 import { stripe } from '../lib/stripe';
 
@@ -61,8 +63,14 @@ export default function Home({ products }: HomeProps) {
                   <Image src={product.imageUrl} width={520} height={480} alt="" />
 
                   <footer>
-                    <strong>{product.name}</strong>
-                    <span>{product.price}</span>
+                    <div className="title">
+                      <strong>{product.name}</strong>
+                      <span>{product.price}</span>
+                    </div>
+
+                    <div className="icon">
+                      <Handbag weight="bold" size={32} />
+                    </div>
                   </footer>
                 </Product> 
               </Link>

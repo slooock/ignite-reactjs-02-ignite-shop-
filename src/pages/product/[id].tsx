@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import axios from 'axios';
@@ -7,6 +7,7 @@ import Image from 'next/future/image';
 import Head from 'next/head';
 
 import { stripe } from '../../lib/stripe';
+import { CartShoppingContext } from '../../contexts/CartShoppingContext';
 
 import { ProductContainer, ImageContainer, ProductDetails, ImageContainerSkeleton, ProductDetailsSkeleton } from '../../styles/pages/product';
 
@@ -23,29 +24,31 @@ interface ProductProps {
 
 export default function Product({ product }: ProductProps){
   const { isFallback } = useRouter()
-  const [isCreatingCheckoutSession, setIsCreatingCheckoutSession] = useState(false)
+  // const [isCreatingCheckoutSession, setIsCreatingCheckoutSession] = useState(false)
 
-  async function handleBuyProduct() {
-    try {
-      setIsCreatingCheckoutSession(true)
+  const { addItem } = useContext(CartShoppingContext);
 
-      const response = await axios.post('/api/checkout', {
-        priceId: product.defaultPriceId,
-      })
+  // async function handleBuyProduct() {
+    // try {
+    //   setIsCreatingCheckoutSession(true)
 
-      const { checkoutUrl } = response.data
+    //   const response = await axios.post('/api/checkout', {
+    //     priceId: product.defaultPriceId,
+    //   })
 
-      window.location.href = checkoutUrl
-    } catch (err) {
-      // Conectar com uma ferramenta de observabilidade (Datadog / Sentry)
+    //   const { checkoutUrl } = response.data
 
-      setIsCreatingCheckoutSession(false)
+    //   window.location.href = checkoutUrl
+    // } catch (err) {
+    //   // Conectar com uma ferramenta de observabilidade (Datadog / Sentry)
 
-      alert('Falha ao redirecionar ao checkout!')
-    }
-  }
+    //   setIsCreatingCheckoutSession(false)
 
-  if (isFallback) {
+    //   alert('Falha ao redirecionar ao checkout!')
+    // }
+  // }
+
+   if (isFallback) {
     return (
       <>
         <Head>
@@ -81,8 +84,8 @@ export default function Product({ product }: ProductProps){
           <span>{product.price}</span>
           <p>{product.description}</p>
 
-          <button disabled={isCreatingCheckoutSession} onClick={handleBuyProduct}>
-            Comprar agora
+          <button onClick={() => addItem(product)}>
+            Colocar na sacola
           </button>
         </ProductDetails>
       </ProductContainer>
