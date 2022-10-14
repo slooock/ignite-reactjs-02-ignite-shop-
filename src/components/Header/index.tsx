@@ -1,4 +1,5 @@
 import { useContext, useState } from 'react';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/future/image';
 import { keyframes } from '@stitches/react';
@@ -16,6 +17,8 @@ export function Header() {
   const [aimation, setAnimation] = useState('')
   
   const { cartShopping } = useContext(CartShoppingContext)
+
+  const { pathname } = useRouter();
 
   const openAnimation = keyframes({
     '0%': { transform: 'translateX(100%)' },
@@ -39,6 +42,20 @@ export function Header() {
     setTimeout(() => {
       setCartShoppingIsOpen(false)
     }, 200)
+  }
+
+  if(pathname === '/success') {
+    return (
+      <HeaderContainer
+        style={{
+          justifyContent: 'center',
+        }}
+      >
+        <Link href="/">
+          <Image src={logoImg} alt="" />
+        </Link>
+      </HeaderContainer>
+    )
   }
 
   return (
