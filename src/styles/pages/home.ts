@@ -92,6 +92,7 @@ export const ArrowLeft = styled('button', {
   zIndex: 10,
   
   border: 0,
+  color: '$gray300',
   background: 'linear-gradient(-90deg, rgba(18, 18, 20, 0) 0%, rgba(18, 18, 20, 0.75) 100%)',
 
   '@bp': {
@@ -99,11 +100,7 @@ export const ArrowLeft = styled('button', {
   },
 
   '&:hover': {
-    svg: {
-      path: {
-         fill: '$white',
-      },
-    },
+    color: '$white',
   },
 })
 
@@ -119,6 +116,7 @@ export const ArrowRight = styled('button', {
   zIndex: 10,
 
   border: 0,
+  color: '$gray300',
   background: 'linear-gradient(90deg, rgba(18, 18, 20, 0) 0%, rgba(18, 18, 20, 0.75) 100%)',
   
   '@bp': {
@@ -126,10 +124,6 @@ export const ArrowRight = styled('button', {
   },
 
   '&:hover': {
-    svg: {
-      path: {
-        fill: '$white',
-      },
-    },
+    color: '$white',
   },
 })
