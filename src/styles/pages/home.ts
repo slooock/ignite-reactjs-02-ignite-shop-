@@ -9,6 +9,13 @@ export const HomeContainer = styled('main', {
 })
 
 export const Product = styled('div', {
+  '&.active': {
+    footer: {
+      transform: 'translateY(0%)',
+      opacity: 1,
+    },
+  },
+  
   background: 'linear-gradient(180deg, #1ea483 0%, #7465d4 100%)',
   borderRadius: 8,
   padding: '0.25rem',
@@ -45,6 +52,7 @@ export const Product = styled('div', {
       display: 'flex',
       gap: '.5rem',
       flexDirection: 'column',
+      flex: 1,
 
       strong: {
         fontSize: '$lg',
@@ -68,20 +76,6 @@ export const Product = styled('div', {
       borderRadius: 6,
       background: '$green500',
       color: '$white',
-    },
-  },
-
-  '&:hover': {
-    footer: {
-      transform: 'translateY(0%)',
-      opacity: 1,
-    },
-  },
-
-  '@bp': {
-    footer: {
-      flexWrap: 'wrap',
-      gap: '1rem',
     },
   },
 })
