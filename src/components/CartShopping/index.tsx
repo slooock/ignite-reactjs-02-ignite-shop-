@@ -5,7 +5,16 @@ import { CircleNotch, Minus, Plus, TrashSimple, X } from 'phosphor-react';
 
 import { CartShoppingContext } from '../../contexts/CartShoppingContext';
 
-import { CartShoppingContainer, CloseButton, Items, Item, PurchaseDetails, Actions } from './styles';
+import { 
+  CartShoppingContainer, 
+  CloseButton, 
+  Items, 
+  Item,
+  ImageContainer,
+  Info,
+  Actions,
+  PurchaseDetails,
+} from './styles';
 
 interface CartShoppingProps {
   styles: any;
@@ -57,39 +66,38 @@ export function CartShopping({ styles, closeCartShopping }: CartShoppingProps) {
           cartShopping.map(product => {
             return (
               <Item key={product.id}>
-                <div className="image-container">
+                <ImageContainer>
                   <Image src={product.imageUrl} width={100} height={100} alt="" />
-                </div>
-                <div className="info">
-                  <div>
+                </ImageContainer>
+
+                <Info>
                     <span>{product.name}</span>
                     <strong>{product.price}</strong>
-                  </div>
-                  
-                  <Actions>
+                </Info>
 
-                    <div className="quantity">
-                      <button onClick={() => decreaseItemQuantity(product)}>
-                        <Minus weight="bold" color="white" size={18} />
-                      </button>
-
-                      <span>{product.quantity}</span>
-
-                      <button onClick={() => increaseItemQuantity(product)}>
-                       <Plus weight="bold" color="white" size={18} />
-                      </button>
-                    </div>
-
-
-                    <button 
-                      className="remove"
-                      onClick={() => removeItem(product)}
-                    >
-                      <TrashSimple weight="bold" color="white"  size={18} />
-                      Remover
+                <Actions>
+                  <div className="quantity">
+                    <button onClick={() => decreaseItemQuantity(product)}>
+                      <Minus weight="bold" color="white" size={14} />
                     </button>
-                  </Actions>
-                </div>
+
+                    <span>{product.quantity}</span>
+
+                    <button onClick={() => increaseItemQuantity(product)}>
+                      <Plus weight="bold" color="white" size={14} />
+                    </button>
+                  </div>
+
+
+                  <button 
+                    className="remove"
+                    onClick={() => removeItem(product)}
+                  >
+                    <TrashSimple weight="bold" color="white"  size={14} />
+                    Remover
+                  </button>
+                </Actions>
+
               </Item>
             )
           })

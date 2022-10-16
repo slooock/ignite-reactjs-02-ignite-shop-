@@ -7,8 +7,7 @@ const rotate = keyframes({
 
 export const CartShoppingContainer = styled('div', {  
   height: '100vh',
-  width: '100%',
-  maxWidth: 480,  
+  maxWidth: 'auto',  
   position: 'fixed',
   top: 0,
   right: 0,
@@ -19,10 +18,14 @@ export const CartShoppingContainer = styled('div', {
 
   background: '$gray800',
   boxShadow: '-10px 0 30px rgba(0, 0, 0, 0.8)',
-
+  
   h2: {
     marginTop: '1rem',
     fontSize: '$lg',
+  },
+
+  '@media(max-width: 500px)': {
+    width: '100%',
   },
 })
 
@@ -57,45 +60,56 @@ export const Items = styled('div', {
 })
 
 export const Item = styled('div', {
-  display: 'flex',
-  alignItems: 'center',
-  gap: '1.25rem',
   marginBottom: '1.5rem',
+	gridTemplateColumns: '100px 1fr',
+  display: 'grid',
+  gap: '1rem',
+  gridTemplateAreas:`
+    "image info"
+    "image actions"
+  `,
   
-  '.image-container': {
-    background: 'linear-gradient(180deg, #1ea483 0%, #7465d4 100%)',
-    width: 100,
-    height: 100,
-    borderRadius: 8,
-  },
-
-  '.info': {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    gap: '1rem',
-    flex: 1,  
-
-    'span': {
-      display: 'block',
-      fontSize: '$md',
-    },
-
-    'strong': {
-      marginTop: '.5rem',
-      display: 'block',
-      fontSize: '$md',
-    },  
+  '@media(max-width: 500px)': {
+    gridTemplateAreas:`
+    "image info"
+    "actions actions"
+  `,
   },
 })
 
+export const ImageContainer = styled('div', {
+  gridArea: 'image',
+  width: 100,
+  height: 100,
+  borderRadius: 8,
+  background: 'linear-gradient(180deg, #1ea483 0%, #7465d4 100%)',
+})
+
+export const Info = styled('div', {
+  gridArea: 'info',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'flex-start',
+
+  'span': {
+    display: 'block',
+    fontSize: '$md',
+  },
+
+  'strong': {
+    marginTop: '.5rem',
+    display: 'block',
+    fontSize: '$md',
+  },  
+})
+
 export const Actions = styled('div', {
-  width: '100%',
+  gridArea: 'actions',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
   gap: '1rem',
+  width: '100%',
 
   button: {
     cursor: 'pointer',

@@ -4,10 +4,11 @@ export const HeaderContainer = styled('header', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  paddingInline: '8.5rem',
+  paddingInline: '10vh',
 
   '@media(max-width: 500px)': {
     paddingInline: '1rem',
+    marginBlock: '1rem 2rem',
   },
 })
 

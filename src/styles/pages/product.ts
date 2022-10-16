@@ -4,16 +4,15 @@ export const ProductContainer = styled('main', {
   display: 'grid',
   gridTemplateColumns: '1fr 1fr',
   alignItems: 'stretch',
+  justifyContent: 'center',
   gap: '4rem',
+  height: 'auto',
+  paddingInline: '5vw',
 
-  width: '100%',
-  maxWidth: 1180,
-  margin: '0 auto', 
-
-  '@bp': {
+  '@media(max-width: 500px)': {
     flexWrap: 'wrap',
     gridTemplateColumns: '1fr',
-    maxWidth: '100%',
+    paddingInline: 0,
   },
 })
 
@@ -34,8 +33,8 @@ export const ImageContainer = styled('div', {
     width: '100%',
   },
 
-  '@bp': {
-    maxWidth: '100%',
+  '@media(max-width: 500px)': {
+    maxWidth: '100vw',
   },
 })
 
@@ -78,9 +77,9 @@ export const ProductDetails = styled('div', {
     }
   },
 
-  '@bp': {
+  '@media(max-width: 500px)': {
     button: {
-      marginBlock: '4rem',
+      marginTop: '2rem',
     },
   },
 })

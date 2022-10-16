@@ -36,6 +36,7 @@ export const Product = styled('div', {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
+    gap: '.5rem',
     
     borderRadius: 6,
     background: 'rgba(0, 0, 0, 0.6)',
@@ -90,13 +91,12 @@ export const ArrowLeft = styled('button', {
   border: 0,
   color: '$gray300',
   background: 'linear-gradient(-90deg, rgba(18, 18, 20, 0) 0%, rgba(18, 18, 20, 0.75) 100%)',
-
-  '@bp': {
-    paddingRight: '1rem',
-  },
-
   '&:hover': {
     color: '$white',
+  },
+  
+  '@media(max-width: 500px)': {
+    paddingRight: 0,
   },
 })
 
@@ -115,11 +115,11 @@ export const ArrowRight = styled('button', {
   color: '$gray300',
   background: 'linear-gradient(90deg, rgba(18, 18, 20, 0) 0%, rgba(18, 18, 20, 0.75) 100%)',
   
-  '@bp': {
-    paddingLeft: '1rem',
-  },
-
   '&:hover': {
     color: '$white',
+  },
+
+  '@media(max-width: 500px)': {
+    paddingLeft: 0,
   },
 })
