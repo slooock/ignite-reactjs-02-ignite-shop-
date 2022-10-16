@@ -1,16 +1,13 @@
 import { styled } from '@stitches/react';
 
 export const HeaderContainer = styled('header', {
-  width: '100%',
-  maxWidth: 1180,
-  marginInline: 'auto',
-
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
+  paddingInline: '8.5rem',
 
-  '@bp': {
-    marginTop: '2rem',
+  '@media(max-width: 500px)': {
+    paddingInline: '1rem',
   },
 })
 

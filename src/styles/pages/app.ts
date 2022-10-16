@@ -2,21 +2,23 @@ import { styled } from '..';
 
 export const Container = styled('div', {
   display: 'flex',
+  justifyContent: 'space-evenly',
   alignItems: 'center',
+  
   height: '100vh',
+  maxWidth: 1440,
+  marginInline: 'auto',
 
-  '@bp': {
-    height: 'auto',
+  '@media(max-width: 500px)': {
+    paddingInline: '1rem',
   },
 })
 
 export const Content = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  gap: '2rem',
+  justifyContent: 'space-evenly',
   width: '100%',
-  
-  '@bp': {
-    paddingInline: '2rem',
-  },
+  height: '100%',
+  maxHeight: 900,
 })
