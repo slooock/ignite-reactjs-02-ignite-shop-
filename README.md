@@ -29,6 +29,11 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
    <img src=".github/product.png" />
 </div>
 
+### Cart
+<div align="center">
+   <img src=".github/cart.png" />
+</div>
+
 ### Success
 <div align="center">
    <img src=".github/success.png" />
